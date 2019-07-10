@@ -1,7 +1,9 @@
 #!/usr/bin/env nodejs
 var http = require('http');
 http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Servidor Rodando 1.3\n');
+
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({ selo: "123456AAAA123456", tfj:15.3, funcivil:15.85 , emolumento:80}));
+    //res.json({selo: "123456AAA123456"});
 }).listen(8500, 'localhost');
-console.log('Servidor rodando http://localhost:8500/');
+
